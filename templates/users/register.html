@@ -1,0 +1,51 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block content %}
+    
+    <div class="row">
+        <div class="col-md-4 col-10 mx-auto">
+            <div class="card">
+                <div class="card-header bg-dark fw-bold text-white">
+                    <h4>Register</h4>
+                </div>
+                <div class="card-body bg-secondary">
+                    <form action="{% url 'register' %}" class="action" method="post">
+                        {% csrf_token %}
+                        <div class="form-group m-2">
+                            <label for="username">Username</label>
+                            <input type="text" name="username" class="form-control" required>
+                        </div>
+                        <div class="form-group m-2">
+                            <label for="email">E-mail</label>
+                            <div class="input-group">
+                                <input type="text" name="email" class="form-control rounded" required>
+                                <div class="input-group-append">
+                                    <select id="mail" class="form-select">
+                                        <option id="gmail" value="gmail" selected>@gmail.com</option>
+                                        <option id="hotmail" value="hotmail">@hotmail.com</option>
+                                        <option id="outlook" value="outlook">@outlook.com</option>
+                                    </select>   
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group m-2">
+                            <label for="password">Password</label>
+                            <input type="password" name="password" class="form-control" required>
+                        </div>
+                        <div class="form-group m-2">
+                            <label for="repassword">Re-Password</label>
+                            <input type="password" name="repassword" class="form-control" required>
+                        </div>
+                        <div class="d-grid gap-2 mt-4">
+                            <input type="submit" class="btn btn-outline-dark fw-bold">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+{% endblock %}
+
+

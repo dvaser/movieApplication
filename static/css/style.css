@@ -1,0 +1,16 @@
+.nav-color{
+    background:rgb(32, 30, 30) !important;
+}
+
+.nav-link.active, .dropdown-item.active {
+    background-color: #FFCA47 !important;
+    color: black !important;
+}
+
+.dropdown-item:focus{
+    background-color: #FFCA47 !important;
+}
+
+.dropdown-menu-dark{
+    background:rgb(45, 42, 42) !important;
+}
