@@ -8,9 +8,17 @@
 }
 
 .dropdown-item:focus{
-    background-color: #FFCA47 !important;
+    background-color: #bb9e54 !important;
 }
 
 .dropdown-menu-dark{
     background:rgb(45, 42, 42) !important;
+}
+
+nav .nav-link:hover{
+    background-image: linear-gradient(to bottom right,#f58888,#d8d8a7,#8f8ce9,#aff096);
+    border: 2px;
+    border-radius: 10px;
+    border-color: black;
+    color: black !important;
 }
