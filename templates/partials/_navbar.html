@@ -17,27 +17,32 @@
                     <div class="offcanvas-body w-100 nav-color" id="navbar-items-label">
                         <ul class="navbar-nav nav-pills me-auto fw-semibold text-uppercase font-monospace">
                             <li class="nav-item">
-                                <a href="{% url 'index' %}" class="nav-link text-white">Home</a>
+                                <a href="{% url 'index' %}" class="nav-link text-white nav-option">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a href="{% url 'about' %}" class="nav-link text-white">About</a>
+                                <a href="{% url 'about' %}" class="nav-link text-white nav-option">About</a>
                             </li>
                             <li class="nav-item">
-                                <a href="{% url 'movies' %}" class="nav-link text-white">Movies</a>
+                                <a href="{% url 'movies' %}" class="nav-link text-white nav-option">Movies</a>
                             </li>
                         </ul>
                         <ul class="navbar-nav text-uppercase font-monospace">
                             {% if user.is_authenticated %}
-                                <li class="nav-item fst-italic">
-                                    <a href="javascript:{document.getElementById('logout').submit()}" class="nav-link text-white">{{ user.username }}</a>
+                                <li class="nav-item fst-italic fw-bold">
+                                    <a href="javascript:{document.getElementById('logout').submit()}" class="nav-link rounded rounded-5 btn btn-sm btn-outline-danger text-white">
+                                        Logout ({{user.username}})
+                                    </a>
                                     <form action="{% url 'logout' %}" method="POST" id="logout">
                                         {% csrf_token %}
                                         <input type="hidden">
                                     </form>
                                 </li>
                             {% else %}
-                                <li class="nav-item fw-semibold">
-                                    <a href="{% url 'login' %}" class="nav-link text-white">Login</a>
+                                <li class="nav-item fst-italic fw-bold me-2">
+                                    <a href="{% url 'login' %}" class="nav-link rounded rounded-5 btn btn-sm btn-danger text-white">Login</a>
+                                </li>
+                                <li class="nav-item fst-italic fw-bold me-2">
+                                    <a href="{% url 'register' %}" class="nav-link rounded rounded-5 btn btn-sm btn-outline-danger text-white">Register</a>
                                 </li>
                             {% endif %}
                         </ul>

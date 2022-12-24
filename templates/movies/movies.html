@@ -14,7 +14,7 @@
                     <div class="card mb-3">
                         <div class="row m-auto">
                             <a href="{% url 'detail' movie.id %}" class="col-md-3 col-3 m-auto">
-                                <img src="{% static movie.get_image_path %}" alt="" class="w-100 p-3">
+                                <img src="{{ movie.image.url }}" alt="" class="w-100 p-3">
                             </a>
                             
                             <div class="col-md-9 col-9">

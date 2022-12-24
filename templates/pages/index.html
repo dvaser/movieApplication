@@ -18,7 +18,7 @@
                         <div class="row card-body">
                             <a href="{% url 'detail' movie.id %}" class="m-auto text-decoration-none">
                                 <h4 class='card-title text-center text-dark'>{{ movie.name }}</h4>
-                                <img src="{% static movie.get_image_path %}" alt="" class="w-100 p-4">
+                                <img src="{{ movie.image.url }}" alt="" class="w-100 p-4">
                             </a>
                             <small class="card-text text-dark text-end">{{ movie.created_date | timesince }}</small>
                         </div>
